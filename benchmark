@@ -1,0 +1,7 @@
+START=$(date +%s%N)
+dub --force 2>&1> /dev/null
+END=$(date +%s%N)
+
+ELAPSED_MS=$((($END - $START)/1000000))
+
+echo $((ELAPSED_MS/1000)).$((ELAPSED_MS%1000)) sec elapsed
